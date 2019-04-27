@@ -1,0 +1,179 @@
+{
+	"template": {
+		"prefix": "cpp",
+		"body": [
+			"      $$$$$$$$$$$$$       $$$$$$$$$$$$$%.",
+			"   &$             &$    =$              $",
+			"   $               $$$$$$=              @&",
+			"B=$$               $$$$$$                $$&=",
+			"$$$$     +1s       $$&-$$      +1s       $$$",
+			"$$$$               $-   $                $$$",
+			"   $               $    $                .B",
+			"    $              $     $              %",
+			"     $          =$         =$          @&",
+			"      #$$$$$$$$$%           -@$$$$$$$$B",
+			"",
+			"                莫生        莫生",
+			"                 气         气",
+			"",
+			"                 代码辣鸡非我意,",
+			"                 自己动手分田地;",
+			"                 你若气死谁如意?",
+			"                 谈笑风生活长命.",
+			"-------------------------------------",
+			"|           Code by masnn           |",
+			"|      Email:masnn0@outlook.com     |",
+			"|            Do not copy            |",
+			"-----------------------------------*/",
+			"#include<iostream>",
+			"using namespace std;",
+			"",
+			"int main(){",
+			"    $0",
+			"    return 0;",
+			"}"
+		],
+		"description": "Cpp template"
+	},
+	"codeforces": {
+		"prefix": "cpp1",
+		"body": [
+			"/*                        ..",
+			"                        .' @`._",
+			"         ~       ...._.'  ,__.-;",
+			"      _..- - - /`           .-'    ~",
+			"     :     __./'       ,  .'-'- .._",
+			"  ~   `- -(.-'''- -.    \\`._       `.   ~",
+			"    _.- '(  .______.'.-' `-.`         `.",
+			"   :      `-..____`-.                   ;",
+			"   `.             ````  稻花香里说丰年，  ;   ~",
+			"     `-.__          听取人生经验。  __.-'",
+			"          ````- - -.......- - -'''    ~",
+			"       ~                   ~",
+			"-------------------------------------",
+			"|           Code by masnn           |",
+			"|      Email:masnn0@outlook.com     |",
+			"|            Do not copy            |",
+			"-----------------------------------*/",
+			"#include<iostream>",
+			"using namespace std;",
+			"",
+			"int main(){",
+			"    $0",
+			"    return 0;",
+			"}"
+		],
+		"description": "Cpp template"
+	},
+	"qsort-cpp": {
+		"prefix": "void qsort(){}",
+		"body": [
+			"void qsort(int l,int r){",
+			"    int i=l,j=r,mid=$1[(l+r)/2];",
+			"    do{",
+			"        while ($1[i]<mid) i++;",
+			"        while ($1[j]>mid) j--;",
+			"        if (i<=j){",
+			"            swap($1[i],$1[j]);",
+			"            i++;j--;",
+			"        }",
+			"    }while (i<=j);",
+			"    if (i<r) qsort(i,r);",
+			"    if (j>l) qsort(l,j);",
+			"}",
+			"$0"
+		],
+		"description": "Qsort-cpp"
+	},
+	"prime": {
+		"prefix": "bool prime(int a){",
+		"body": [
+			"inline bool prime(int a){",
+			"    if (a<2) return false;",
+			"    if (a==2) return true;",
+			"    for(int i=2;i<=floor(sqrt(a));i++)",
+			"        if (a%i==0) return false;",
+			"    return true;",
+			"}"
+		],
+		"description": "prime()"
+	},
+	"odd": {
+		"prefix": "bool odd(int a){",
+		"body": [
+			"inline bool odd(int a){",
+			"    if (!a%2) return true;",
+			"    return false;",
+			"}"
+		],
+		"description": "odd()"
+	},
+	"ifstream": {
+		"prefix": "ifstream",
+		"body": [
+			"ifstream cin(\"$1.in\");",
+			"ofstream cout(\"$1.out\");"
+		],
+		"description": "ifstream&ofstream"
+	},
+	"freopen": {
+		"prefix": "freopen",
+		"body": [
+			"freopen(\"$1.in\",\"r\",stdin);",
+			"freopen(\"$1.out\",\"w\",stdout);"
+		],
+		"description": "freopen"
+	},
+	"trie": {
+		"prefix": "module::tire",
+		"body": [
+			"#define char_num 26",
+			"#define tire_scope 1000",
+			"struct tire_node{",
+			"    int cnt,pointer[char_num+1];",
+			"};",
+			"struct tire{",
+			"    tire_node dat[tire_scope];",
+			"    int cnt=1;",
+			"    inline int convert(char c){",
+			"        return int(c)-96;",
+			"    }",
+			"    inline int head(){return 1;}",
+			"    void insert(string str){",
+			"        int p=this->head(),l=str.length();",
+			"        for(int i=0;i<l;i++)",
+			"            if (!this->dat[p].pointer[this->convert(str[i])]){",
+			"                this->cnt++;",
+			"                this->dat[p].pointer[this->convert(str[i])]=this->cnt;",
+			"                p=this->cnt;",
+			"            }else",
+			"                p=this->dat[p].pointer[this->convert(str[i])];",
+			"        this->dat[p].cnt++;",
+			"    }",
+			"    void remove(string str){",
+			"        int p=this->head(),l=str.length();",
+			"        for(int i=0;i<l;i++)",
+			"            if (!this->dat[p].pointer[this->convert(str[i])])",
+			"               return;",
+			"            else",
+			"                p=this->dat[p].pointer[this->convert(str[i])];",
+			"        this->dat[p].cnt--;",
+			"    }",
+			"    int find(string str){",
+			"        int p=this->head(),l=str.length();",
+			"        for(int i=0;i<l;i++)",
+			"            if (!this->dat[p].pointer[this->convert(str[i])])",
+			"                return 0;",
+			"            else",
+			"                p=this->dat[p].pointer[this->convert(str[i])];",
+			"        return this->dat[p].cnt;",
+			"    }",
+			"};"
+		],
+		"description": "Trie Model"
+	},
+	"read": {
+		"prefix": "read(*)",
+		"body": "scanf(\"%d\",&$1)"
+	}
+}
